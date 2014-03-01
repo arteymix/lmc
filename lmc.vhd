@@ -95,7 +95,7 @@ begin
 
             case instruction is
                 when HLT => -- terminate the program (counter will not increase)
-                    null;
+                    report "Program halted." severity NOTE;
                 when ADD => 
                     accumulator <= accumulator + signed(memory(address));
                     ordinal_counter <= ordinal_counter + 1;
@@ -131,11 +131,11 @@ begin
                         when 2 => -- 902
                             output <= accumulator;
                         when others =>
-                            assert FALSE report "Illegal instruction" severity ERROR;
+                            assert FALSE report "Illegal i/o instruction." severity ERROR;
                     end case;
                     ordinal_counter <= ordinal_counter + 1;
                 when others =>
-                    assert FALSE report "Illegal instruction" severity ERROR;
+                    assert FALSE report "Illegal instruction." severity ERROR;
             end case;
         end if;
     end process;
