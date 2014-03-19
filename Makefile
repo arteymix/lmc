@@ -5,12 +5,13 @@
 
 GHDL=ghdl
 GHDLFLAGS=
+GHDLRUNFLAGS=--vcd=testbed.vcd
 
 # Default target
 all: testbed
 
 # Elaboration target
-testbed: /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std-body.o lmc.o testbed.o
+testbed: /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std-body.o lmc.o testbed.o
 	$(GHDL) -e $(GHDLFLAGS) $@
 
 # Run target
@@ -18,16 +19,16 @@ run: testbed
 	$(GHDL) -r testbed $(GHDLRUNFLAGS)
 
 # Targets to analyze files
-/usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o: /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/../../../src/ieee/std_logic_1164.v93
+/usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o: /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/../../../src/ieee/std_logic_1164.v93
 	@echo "This file was not locally built ($<)"
 	exit 1
-/usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o: /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/../../../src/ieee/std_logic_1164_body.v93
+/usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o: /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/../../../src/ieee/std_logic_1164_body.v93
 	@echo "This file was not locally built ($<)"
 	exit 1
-/usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o: /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/../../../src/ieee/numeric_std.v93
+/usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o: /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/../../../src/ieee/numeric_std.v93
 	@echo "This file was not locally built ($<)"
 	exit 1
-/usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std-body.o: /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/../../../src/ieee/numeric_std-body.v93
+/usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std-body.o: /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/../../../src/ieee/numeric_std-body.v93
 	@echo "This file was not locally built ($<)"
 	exit 1
 lmc.o: lmc.vhd
@@ -36,9 +37,9 @@ testbed.o: testbed.vhd
 	$(GHDL) -a $(GHDLFLAGS) $<
 
 # Files dependences
-/usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o: 
-/usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o:  /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o
-/usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o:  /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o
-/usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std-body.o:  /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o
-lmc.o:  /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o
-testbed.o:  /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o /usr/lib/gcc/i686-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std-body.o lmc.o
+/usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o: 
+/usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o
+/usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o
+/usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std-body.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o
+lmc.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o
+testbed.o:  /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/std_logic_1164_body.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std.o /usr/lib/gcc/x86_64-fedora_ghdl-linux/4.8.2/vhdl/lib//v93/ieee/numeric_std-body.o lmc.o

@@ -46,7 +46,6 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VHDL_FILE lmc.vhd
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_location_assignment PIN_N25 -to input[0] -comment SW0
@@ -57,25 +56,30 @@ set_location_assignment PIN_AF14 -to input[4] -comment SW4
 set_location_assignment PIN_AD13 -to input[5] -comment SW5
 set_location_assignment PIN_AC13 -to input[6] -comment SW6
 set_location_assignment PIN_C13 -to input[7] -comment SW7
-set_location_assignment PIN_AE22 -to input[8] -comment SW8
-set_location_assignment PIN_AF22 -to input[9] -comment SW9
-set_location_assignment PIN_W19 -to input[10] -comment SW10
-set_location_assignment PIN_V18 -to input[11] -comment SW11
-set_location_assignment PIN_AE22 -to output[0] -comment LEDR0
-set_location_assignment PIN_AF22 -to output[1] -comment LEDR1
-set_location_assignment PIN_W19 -to output[2] -comment LEDR2
-set_location_assignment PIN_V18 -to output[3] -comment LEDR3
-set_location_assignment PIN_V18 -to output[4] -comment LEDR4
-set_location_assignment PIN_V18 -to output[5] -comment LEDR5
-set_location_assignment PIN_V18 -to output[6] -comment LEDR6
-set_location_assignment PIN_V18 -to output[7] -comment LEDR7
-set_location_assignment PIN_V18 -to output[8] -comment LEDR8
-set_location_assignment PIN_V18 -to output[9] -comment LEDR9
-set_location_assignment PIN_V18 -to output[10] -comment LEDR10
-set_location_assignment PIN_V18 -to output[11] -comment LEDR11
-set_location_assignment PIN_V18 -to clk -comment KEY0
-set_location_assignment PIN_V18 -to rst -comment KEY1
-set_location_assignment PIN_V18 -to input_warn -comment LEDG0
-set_location_assignment PIN_V18 -to output_warn -comment LEDG1
-set_location_assignment PIN_V18 -to halt_warn -comment LEDG2
+set_location_assignment PIN_B13 -to input[8] -comment SW8
+set_location_assignment PIN_A13 -to input[9] -comment SW9
+set_location_assignment PIN_N1 -to input[10] -comment SW10
+set_location_assignment PIN_P1 -to input[11] -comment SW11
+set_location_assignment PIN_AE23 -to output[0] -comment LEDR0
+set_location_assignment PIN_AF23 -to output[1] -comment LEDR1
+set_location_assignment PIN_AB21 -to output[2] -comment LEDR2
+set_location_assignment PIN_AC22 -to output[3] -comment LEDR3
+set_location_assignment PIN_AD22 -to output[4] -comment LEDR4
+set_location_assignment PIN_AD23 -to output[5] -comment LEDR5
+set_location_assignment PIN_AD21 -to output[6] -comment LEDR6
+set_location_assignment PIN_AC21 -to output[7] -comment LEDR7
+set_location_assignment PIN_AA14 -to output[8] -comment LEDR8
+set_location_assignment PIN_Y13 -to output[9] -comment LEDR9
+set_location_assignment PIN_AA13 -to output[10] -comment LEDR10
+set_location_assignment PIN_AC14 -to output[11] -comment LEDR11
+set_location_assignment PIN_G26 -to clk -comment KEY0
+set_location_assignment PIN_N23 -to rst -comment KEY1
+set_location_assignment PIN_AE22 -to input_warn -comment LEDG0
+set_location_assignment PIN_AF22 -to output_warn -comment LEDG1
+set_location_assignment PIN_W19 -to halt_warn -comment LEDG2
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name VHDL_FILE testbed.vhd
+set_global_assignment -name VHDL_FILE lmc.vhd
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
